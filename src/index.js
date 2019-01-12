@@ -88,7 +88,7 @@ export default (options = {}) => {
 
     async onwrite(opts) {
       if (extracted.size === 0) return
-      const dirnameMain = path.dirname(opts.file)
+      const dirnameMain = opts.file ? path.dirname(opts.file) : opts.dir;
 
       const getExtracted = filepath => {
         if (!filepath) {
